@@ -1,7 +1,7 @@
 # In scraper.py
 from playwright.sync_api import sync_playwright
 import time
-from ai_processor import summarize_job_description
+from Bot.ai_processor import summarize_job_description
 
 URL = "https://www.linkedin.com/jobs/search/?keywords=Software%20Intern&location=Mexico"
 
