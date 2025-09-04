@@ -1,6 +1,7 @@
 # In scraper.py
 from playwright.sync_api import sync_playwright
 import time
+from ai_processor import summarize_job_description
 
 URL = "https://www.linkedin.com/jobs/search/?keywords=Software%20Intern&location=Mexico"
 
@@ -39,12 +40,15 @@ def run(playwright):
 
             title = card.locator("h3.base-search-card__title").text_content().strip()
             description_panel = page.locator("div.show-more-less-html__markup")
-            description_text = description_panel.text_content().strip()
+            raw_description_text = description_panel.text_content().strip()
             
+            # --- NEW: PROCESS THE TEXT WITH AI ---
             print(f"\n## {title} ##")
-            print(description_text[:250] + "...")
+            print("Processing with AI...")
+            summary = summarize_job_description(raw_description_text)
+            print(summary) # Print the clean summary from the AI
             print("-" * 20)
-            time.sleep(1) # Small delay between clicks to be respectful to the server
+            time.sleep(1)
 
         except Exception as e:
             print(f"Could not process a card: {e}")
