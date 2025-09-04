@@ -59,7 +59,7 @@ async def find_internships(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
 
 def main():
-    TOKEN = "8365574938:AAEbhWF5iObXnBMpx_b51nu0vcoNvHKNyJM"
+    TOKEN = ""
     application = Application.builder().token(TOKEN).build()
 
     # Register the /findinternships command handler
