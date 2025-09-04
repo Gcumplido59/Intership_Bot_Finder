@@ -3,7 +3,7 @@ import google.generativeai as genai
 
 # --- CONFIGURATION ---
 # Replace "YOUR_API_KEY" with the key you just got from Google AI Studio.
-API_KEY = "AIzaSyAU0DS50wzsEb9_bZzArGfwDnwr9V9TXIw"
+API_KEY = ""
 genai.configure(api_key=API_KEY)
 model = genai.GenerativeModel('gemini-1.5-flash') # A fast and capable model
 
