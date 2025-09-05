@@ -1,3 +1,5 @@
+"""Handles the processing of job listings using a generative AI model."""
+
 import google.generativeai as genai
 
 # CONFIGURATION
@@ -11,8 +13,21 @@ except Exception as e:
     model = None
 
 def format_job_listing(title: str, company: str, location: str, link: str, description: str) -> str:
-    """
-    Sends structured job data and the full description to the Gemini API and asks it to format it.
+    """Formats a job listing using a generative AI model.
+
+    This function takes job listing details, sends them to a generative AI model,
+    and returns a formatted string suitable for display.
+
+    Args:
+        title: The title of the job.
+        company: The name of the company.
+        location: The location of the job.
+        link: The URL to the job posting.
+        description: The full description of the job.
+
+    Returns:
+        A formatted string containing the job listing details, or a fallback
+        string if the AI model fails.
     """
     if not model:
         return "AI Model is not configured. Please check your API key."
