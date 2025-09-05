@@ -1,11 +1,22 @@
+"""Scrapes job listings from LinkedIn."""
+
 from playwright.async_api import async_playwright
 import asyncio
-from ai_processor import format_job_listing
+from .ai_processor import format_job_listing
 from urllib.parse import quote
 
 async def scrape_linkedin_jobs(query: str) -> list:
-    """
-    Scrapes LinkedIn by visiting each job's direct link for maximum reliability.
+    """Scrapes LinkedIn for job listings based on a search query.
+
+    This function uses Playwright to launch a headless browser, navigate to
+    LinkedIn, and scrape job listings. It then formats the results using
+    the AI processor.
+
+    Args:
+        query: The job search query.
+
+    Returns:
+        A list of formatted job listing strings.
     """
     formatted_query = quote(query)
     URL = f"https://www.linkedin.com/jobs/search/?keywords={formatted_query}&location=Mexico&f_TPR=r172800"

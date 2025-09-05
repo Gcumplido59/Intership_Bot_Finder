@@ -1,6 +1,8 @@
+"""Handles the notification of job listings to a Telegram channel."""
+
 import asyncio
 import telegram
-from scraper import scrape_linkedin_jobs
+from .scraper import scrape_linkedin_jobs
 
 #CONFIGURATION
 TELEGRAM_TOKEN = ""
@@ -9,8 +11,10 @@ CHAT_ID = ""
 JOB_QUERY = "Software engineer internship"
 
 async def main():
-    """
-    Main function to run the scraper and send notifications to Telegram.
+    """Runs the job scraper and sends notifications to Telegram.
+
+    This is the main function of the application. It scrapes for jobs,
+    and if any are found, sends them to the specified Telegram channel.
     """
     print(f"Starting scraper for query: '{JOB_QUERY}'...")
     
@@ -43,6 +47,3 @@ async def main():
             print(f"Could not send message: {e}")
 
     print("All messages sent successfully!")
-
-if __name__ == "__main__":
-    asyncio.run(main())
