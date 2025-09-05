@@ -10,7 +10,7 @@ The main goal of this project is to automate the process of finding and filterin
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/dani-fpad/Intership_Bot_Finder
+    git clone https://github.com/Gcumplido59/Intership_Bot_Finder.git
     cd Intership_Bot_Finder
     ```
 
