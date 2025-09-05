@@ -2,9 +2,9 @@
 
 import asyncio
 import telegram
-from .scraper import scrape_linkedin_jobs
+from scraper import scrape_linkedin_jobs
 
-#CONFIGURATION
+# CONFIGURATION
 TELEGRAM_TOKEN = ""
 CHAT_ID = ""
 

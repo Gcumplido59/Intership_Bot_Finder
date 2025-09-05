@@ -2,7 +2,7 @@
 
 from playwright.async_api import async_playwright
 import asyncio
-from .ai_processor import format_job_listing
+from ai_processor import format_job_listing
 from urllib.parse import quote
 
 async def scrape_linkedin_jobs(query: str) -> list:
